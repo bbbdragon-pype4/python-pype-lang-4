@@ -1,5 +1,5 @@
 from functools import wraps
-from pype3.type_checking import *
+from pype4.type_checking import *
 from functools import reduce
 from collections import defaultdict
 import itertools

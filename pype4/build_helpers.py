@@ -2,7 +2,7 @@ import pprint as pp
 from functools import wraps
 import astpretty
 import time as tm
-from pype3.type_checking import *
+from pype4.type_checking import *
 from ast import *
 import ast
 

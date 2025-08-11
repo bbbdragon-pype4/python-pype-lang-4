@@ -1,7 +1,7 @@
 import csv
-from pype3 import pypeify,pypeify_namespace,p,_,_0,_1,_2,a,ep,tup,iff
-from pype3.helpers import *
-from pype3.mappings import *
+from pype4 import pypeify,pypeify_namespace,p,_,_0,_1,_2,a,ep,tup,iff
+from pype4.helpers import *
+from pype4.mappings import *
 
 EXAMPLE_MAPPING={'CATEGORIZADOR_OLIVIA_DTC':{'replace':'l2Category',
                                              'cast_f':to_string},

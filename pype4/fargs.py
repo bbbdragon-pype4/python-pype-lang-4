@@ -1,12 +1,12 @@
-from pype3.helpers import *
-from pype3.type_checking import *
-from pype3.vals import * #Quote,LamTup,PypeVal,Getter,delam
+from pype4.helpers import *
+from pype4.type_checking import *
+from pype4.vals import * #Quote,LamTup,PypeVal,Getter,delam
 from operator import *
 import numpy as np
 import sys
 import pprint as pp
 import types
-from pype3.vals import NameBookmark,VarAssign,KwargsBookmark
+from pype4.vals import NameBookmark,VarAssign,KwargsBookmark
 
 #############
 # CONSTANTS #

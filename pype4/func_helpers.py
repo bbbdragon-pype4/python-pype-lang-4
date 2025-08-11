@@ -1,11 +1,11 @@
 '''
 python3 watch_file.py -p1 python3 func_helpers.py -d /Users/bennettbullock/python-pype-lang-3/pype3
 '''
-from pype3.type_checking import *
+from pype4.type_checking import *
 from functools import *
 # from pype3 import pypeify,pypeify_namespace,p,_,_0,_1,_2,a,ep,tup,iff
-from pype3.vals import Quote as q
-from pype3.helpers import *
+from pype4.vals import Quote as q
+from pype4.helpers import *
 import pprint as pp
 from collections import Counter
 import numpy as np

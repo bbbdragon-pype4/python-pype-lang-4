@@ -1,6 +1,6 @@
 from operator import *
-from pype3.type_checking import *
-from pype3.helpers import flatten_tuple
+from pype4.type_checking import *
+from pype4.helpers import flatten_tuple
 
 ##########
 # ASSIGN #

@@ -1,7 +1,7 @@
 import numpy as np
-from pype3 import pypeify,pypeify_namespace,p,_,_0,_1,_2,ep,tup,db,a,iff,d
-from pype3.helpers import *
-from pype3 import ep
+from pype4 import pypeify,pypeify_namespace,p,_,_0,_1,_2,ep,tup,db,a,iff,d
+from pype4.helpers import *
+from pype4 import ep
 # from numba import njit,jit
 from functools import reduce
 

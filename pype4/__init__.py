@@ -1,9 +1,9 @@
-name='pype3'
-__version__='3.1.7'
+name='pype4'
+__version__='4.0.1'
 py_slice=slice
-from pype3.build_helpers import *
-from pype3.nodes import *
-from pype3.trees import *
+from pype4.build_helpers import *
+from pype4.nodes import *
+from pype4.trees import *
 from itertools import groupby
 from functools import reduce
 from inspect import signature
@@ -25,11 +25,11 @@ from inspect import currentframe
 import types
 import builtins
 # We are importhing these symbols for visibility, so you can say from pype3 import _0
-from pype3.fargs import _,_0,_1,_2,_3,_4,_5,_6,_7,_8,_9,_10,_last
-from pype3.macros import ep,iff,ift,ifp,iftp,db,dbp,mp,l,lm,ifa,ifta,ea,dp
-from pype3.macros import select,a,ap,m,d,tup,app,c,is_true,squash,change
-from pype3.macros import cl,dm,cl_if,cl_has,cl_app,ext,consec,consec_dct
-from pype3.macros import embed,td,tdm,ddb,ifnot,rt,cl_has_not
+from pype4.fargs import _,_0,_1,_2,_3,_4,_5,_6,_7,_8,_9,_10,_last
+from pype4.macros import ep,iff,ift,ifp,iftp,db,dbp,mp,l,lm,ifa,ifta,ea,dp
+from pype4.macros import select,a,ap,m,d,tup,app,c,is_true,squash,change
+from pype4.macros import cl,dm,cl_if,cl_has,cl_app,ext,consec,consec_dct
+from pype4.macros import embed,td,tdm,ddb,ifnot,rt,cl_has_not
 # from numba import njit
 # import astor
 

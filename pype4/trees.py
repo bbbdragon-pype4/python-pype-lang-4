@@ -2,11 +2,11 @@
 python3 trees.py
 '''
 py_slice=slice
-from pype3.fargs import *
-from pype3.type_checking import *
-from pype3.build_helpers import *
-from pype3.nodes import *
-from pype3.vals import delam,is_bookmark,NameBookmark
+from pype4.fargs import *
+from pype4.type_checking import *
+from pype4.build_helpers import *
+from pype4.nodes import *
+from pype4.vals import delam,is_bookmark,NameBookmark
 from itertools import groupby
 from functools import reduce
 from inspect import getsource

@@ -1,9 +1,9 @@
-from pype3.fargs import embedded_pype,assoc,concat,l,append,dissoc,build_list,build_dict,merge,closure,_,_0,_1,deep_merge,rtrn
-from pype3.fargs import is_map,is_filter,is_mirror
-from pype3.helpers import dct_dissoc,dct_assoc,dct_merge,ls_extend,zip_consec,get_call_or_false_core,singleton_dct,dcts_merge_deep,tup_dct
-from pype3.func_helpers import deep_map,deep_filter
-from pype3.type_checking import *
-from pype3.vals import is_pype_val
+from pype4.fargs import embedded_pype,assoc,concat,l,append,dissoc,build_list,build_dict,merge,closure,_,_0,_1,deep_merge,rtrn
+from pype4.fargs import is_map,is_filter,is_mirror
+from pype4.helpers import dct_dissoc,dct_assoc,dct_merge,ls_extend,zip_consec,get_call_or_false_core,singleton_dct,dcts_merge_deep,tup_dct
+from pype4.func_helpers import deep_map,deep_filter
+from pype4.type_checking import *
+from pype4.vals import is_pype_val
 
 ##########
 # MACROS #
