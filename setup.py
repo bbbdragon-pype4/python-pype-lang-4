@@ -4,14 +4,13 @@ from setuptools import setup, find_packages
 #    LONG_DESCRIPTION=fh.read()
 
 setup(name='python-pype-lang-4',
-      version='4.0.0',
+      version='4.0.3',
       description='Version 4 of pype, a Python-integrated functional programming language - Provides easy-to-use pseudo-macros for common functional programming tasks such as maps, reduces, filters, conditionals, dictionary manipulations, and list manipulations..',
       #long_description_content_type="text/markdown",
       #long_description=LONG_DESCRIPTION,
       classifiers=[
-        'Development Status :: 4 - Alpha',
         'License :: OSI Approved :: MIT License',
-        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.13',
         'Operating System :: OS Independent',
       ],
       keywords='functional programming map reduce filter lambda conditional',
