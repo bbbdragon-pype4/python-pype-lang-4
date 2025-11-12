@@ -381,7 +381,7 @@ class Quote(object):
     the function would crash, because 'mult2' is evaluated on 2 instead of being
     passed into 'f1'.  So I do this:
 
-        from pype3.vals import Quote as q
+        from pype4.vals import Quote as q
 
         p( 2,
            (f1,_,q(mult2))) => mult2(2)+1 => 4+1 => 5
