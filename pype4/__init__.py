@@ -1,5 +1,5 @@
 name='pype4'
-__version__='4.0.1'
+__version__='4.0.6'
 py_slice=slice
 from pype4.build_helpers import *
 from pype4.nodes import *
