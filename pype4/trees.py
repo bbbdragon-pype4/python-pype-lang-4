@@ -688,6 +688,10 @@ def is_pype_function(f,aliases):
 
             return False
 
+        if not hasattr(f,'__globals__'):
+
+            return False
+
         pypeReturnFinder=PypeReturnFinder(aliases)
         src=getsource(f)
         tree=ast.parse(src)
