@@ -480,7 +480,7 @@ def count_prob_array(ls,discount=0):
               _/np.sum)
 '''
 
-from pype3 import _0
+from pype4 import _0
 
 @pypeify()
 def weighted_count_prob_array(ls=[[1,0.5],[2,0.3]],
@@ -911,5 +911,21 @@ def normalized_vec(v):
     return v
   
   
+def index_dict_to_mat(indexDict):
+
+    firstKeys=list(indexDict.keys())
+    secondKeys=flatten_list(list([d.keys() for (k,d) in indexDict.items()]))
+    numRows,numColumns=[max(keys)+1 for keys in (firstKeys,secondKeys)]
+    m=np.zeros([numRows,numColumns])
+
+    for (i,d) in indexDict.items():
+
+        for (j,v) in d.items():    
+
+            m[i,j]=v
+
+    return m
+
+
 pypeify_namespace(globals())
 
