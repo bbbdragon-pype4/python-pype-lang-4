@@ -46,22 +46,22 @@ LAMBDA_ACCUM_LOAD=Name(id='lambda_accum',ctx=Load())
 RETURN_ACCUM=[Return(value=ACCUM_LOAD)]
 NUMPY_NAME=Name(id='np',ctx=Load())
 OPERATOR_NAME=Name(id='_operator',ctx=Load())
-PYPE_VALS_NODE=Attribute(value=Name(id='pype3',ctx=Load()),
+PYPE_VALS_NODE=Attribute(value=Name(id='pype4',ctx=Load()),
                          attr='vals',
                          ctx=Load())
-PYPE_HELPERS_NODE=Attribute(value=Name(id='pype3',ctx=Load()),
+PYPE_HELPERS_NODE=Attribute(value=Name(id='pype4',ctx=Load()),
                             attr='helpers',
                             ctx=Load())
-PYPE_OPTIMIZE_HELPERS_NODE=Attribute(value=Name(id='pype3',ctx=Load()),
+PYPE_OPTIMIZE_HELPERS_NODE=Attribute(value=Name(id='pype4',ctx=Load()),
                             attr='build_helpers',
                             ctx=Load())
-IMPORT_BUILD=ImportFrom(module='pype3', 
+IMPORT_BUILD=ImportFrom(module='pype4', 
                         names=[alias(name='build', asname=None)], 
                         level=0)
-PYPE_RETURN_F_ARGS=Attribute(value=Name(id='pype3',ctx=Load()),
+PYPE_RETURN_F_ARGS=Attribute(value=Name(id='pype4',ctx=Load()),
                              attr='p',
                              ctx=Load())
-PYPE_FUNC=Attribute(value=Name(id='pype3',ctx=Load()),
+PYPE_FUNC=Attribute(value=Name(id='pype4',ctx=Load()),
                     attr='p',
                     ctx=Load())
 
@@ -85,7 +85,7 @@ NONE_NODE=Constant(value=None)
 # PRINT NODES FOR DEBUGGING #
 #############################
 
-PYPE_HELPERS_NODE=Attribute(value=Name(id='pype3',ctx=Load()),
+PYPE_HELPERS_NODE=Attribute(value=Name(id='pype4',ctx=Load()),
                             attr='build_helpers',
                             ctx=Load())
 PRINT_AND_EVAL_NODE=Attribute(value=PYPE_HELPERS_NODE,
@@ -1198,15 +1198,15 @@ def parse_literal(fArg):
 
     if isinstance(fArg,bool):
 
-        return NameConstant(value=fArg)
+        return Constant(value=fArg)
 
     if isinstance(fArg,str):
 
-        return Str(s=fArg)
+        return Constant(value=fArg)
 
     if isinstance(fArg,int) or isinstance(fArg,float):
 
-        return Num(n=fArg)
+        return Constant(value=fArg)
 
     if isinstance(fArg,dict):
 
