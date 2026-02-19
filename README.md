@@ -76,7 +76,7 @@ Pype uses Python3.6 or above.
 
 You can install pype simply by typing:
 ```
-pip3 install python-pype-lang-3
+pip3 install python-pype-lang-4
 ```
 Ensure you are running under root if you do not have proper permissions.  
 
@@ -85,10 +85,10 @@ Ensure you are running under root if you do not have proper permissions.
 Clone this repo, and cd into `python-pype-lang`.  To install on your local machine, under root, run:
 
 ```
-cd python-pype-lang-3
+cd python-pype-lang-4
 pip3 setup.py install
 ```
-To re-install, you will need to run the following script from `python-pype-lang-3`:
+To re-install, you will need to run the following script from `python-pype-lang-4`:
 ```
 ./reinstall_from_source.sh
 ```
@@ -103,7 +103,7 @@ rm /usr/local/lib/python3.6/dist-packages/pype.egg-link
 ```
 Now you are ready to test pype in Python3.  Open a file and input the following:
 ```
-from pype import pypeify_namespace,p,_
+from pype4 import pypeify_namespace,p,_
 
 def say_hello(myName):
 
@@ -171,10 +171,10 @@ Previously, I remained rather mute on this topic, saying it was theoretically po
 
 First, you can write a function that returns a raw pype expression.  `macros.py` are several examples of some code shorthands for common operations.  For example, the `iff(condidtion,expression)` macro returns the evaluated fArg in `expression` if `condition` evaluates as true, otherwise it returns the accum.  You will notice that certain operations, such as list builds have a short macro like `l`.  But if you evaluate them in python, you will find they're much, much uglier:
 ```
->>> from pype3.macros import *
-from pype3.macros import *
+>>> from pype3\4.macros import *
+from pype3\4.macros import *
 >>> from pype3 import _,_0
-from pype3 import _,_0
+from pype4 import _,_0
 >>> l(4,3)
 l(4,3)
 ['BUILD_LS', 4, 3]
@@ -283,7 +283,7 @@ Here we define the fArgs according to a grammar.  We use the following notation:
 A callable is any callable function or callable object in Python3.
 
 ~~~~
-from pype import pype
+from pype4 import pype4
 
 add1=lambda x:x+1
 
@@ -317,7 +317,7 @@ A mirror simply refers to the accum passed to the expression.  It must be explic
 If a mirror is in the first element of the main tuple, it refers to the first argument of the function:
 
 ~~~~
-from pype import pype,_
+from pype4 import _
 
 def f1(n):
    
@@ -604,8 +604,8 @@ d1({3:1,4:2,5:3}) <=> ['key is 3, value is 1','key is 4, value is 2','key is 5, 
 ```
 ## Reduces
 
-`[(fArg1,),<expression|fArg2>]`
-`[(fArg1,),<expression|fArg2>,<expression|fArg3>]`
+`[(callablefArg1,),<expression|fArg2>]`
+`[(callablefArg1,),<expression|fArg2>,<expression|fArg3>]`
 
 This is a reduce on an iterable accum.  In the first case `fArg1` is a binary function applied applied to an accumuled value and an element of the accum:
 ```
@@ -784,7 +784,7 @@ f1([1,2]) <=> [9,11]
 ```
 These are often used when we want to transform the keys and values of a dictionary, in conjunction with index args, `dct_items` and `tup_dct`, the last of which builds a dictionary from a list of tuples or 2-element lists:
 ```
-from python.helpers import dct_items,tup_dct
+from python4.helpers import dct_items,tup_dct
 
 def f1(js):
 
@@ -802,7 +802,7 @@ f1({1:2,3:4}) <=> {6:20,8:40}
 
 This extends a list with either an expression or an evaluated fArg:
 ```
-from pype import app
+from pype3 import app
 
 def f1(ls):
 
@@ -819,7 +819,7 @@ f1([1,2]) <=> [1,2,3]
 This concatenates two lists, either expressions or fArgs.
 
 ```
-from pype import c
+from pype4 import c
 
 def f1(ls):
 
@@ -835,7 +835,7 @@ f1([1,2]) <=> [1,2,3,4]
 
 This builds a dictionary.  There are two ways to use the `db(..)` syntax.  First, we can just provide a key:
 ```
-from pype import db
+from pype4 import db
 
 def f1(n):
 
@@ -869,7 +869,7 @@ f1(2) <=> {2+1:2+3, 2*4:2*3} <=> {3:5, 8:10}
 
 We insert one or more key-value pairs into the accum, where accum is a mapping, in the same way as Dict Build:
 ```
-from pype import a
+from pype4 import a
 
 def f1(js):
 
@@ -899,7 +899,7 @@ f1(js,5) <=> {'a':{'b':{'c':5,'d':8},'e':9}}
 
 This removes keys specified by `<exppression|fArg>,+` from the accum, which must be a mapping:
 ```
-from pype import d
+from pype4 import d
 
 def f1(js):
 
@@ -916,7 +916,7 @@ f1({'a':1,'b':2,'c':3}) <=> {'c':3}
 
 This merges a mapping or an fArg that returns a mapping with the accum, which should also be a mapping:
 ```
-from pype import m
+from pype4 import m
 
 def f1(js):
 
@@ -947,7 +947,7 @@ The function works according to the following rules:
 
 Here is how it works in pype:
 ```
-from pype import dm
+from pype4 import dm
 
 def f1(js):
 
@@ -962,7 +962,7 @@ f1({'a':{'b':{'c':1},'d':{'e':1,'f':2}},'g':1}) <=> {'a': {'b': {'c': 5, 'e': 6}
 
 This embeds a pype expression in an fArg.  The accum passed to the embedding fArg is also passed to the embedded pype:
 ```
-from pype import ep
+from pype4 import ep
 
 def f1(ls):
 
@@ -1018,7 +1018,7 @@ When we assign a variable, the accum in the next expression is not changed at al
 `q(callableFArg)`
 When you need to pass a callable into another function as an argument, you should use this:
 ```
-from pype3.vals import Quote as q
+from pype4.vals import Quote as q
 
 def f1(n,f2):
    ((f2,_), # f2(n)
@@ -1142,8 +1142,8 @@ merge_ls_dct_no_key([{'name':'bobo','payment':20},
 ```
 The usefulness of these two functions becomes more apparent when we show them with pype:
 ```
-from pype import pype
-from pype.helpers import merge_ls_dct_no_key
+from pype4 import pype
+from pype4.helpers import merge_ls_dct_no_key
 
 def f1(dctLS):
 
@@ -1187,7 +1187,7 @@ sort_by_index(ls,1) <=> [(2,3),(1,4),(-1,5)]
 
 I don't know why, but I always found the traditional writing order of Chinese, from top-to-bottom, somehow very beautiful.  Pype reflects this (and perhaps, subconsciously, my admiration for the elegant simplicity of Classical Chinese art), because it encourages you to always separate your fArgs by line:
 ```
-from pype import pype as p
+from pype4 import pype as p
 
 def process_list(ls):
   ([_+1],
@@ -1216,8 +1216,8 @@ I do not subscribe to the philosophy of "let the function do its own work", that
 ## Scoping
 Because the Python interpreter doesn't allow you to refer to unnamed variables, pype doesn't have an equivalent of `let` in Clojure, where you can create scopes on the fly.  To compensate for this I often used dict builds to define an accum which was, in fact, a scope for the succeeding fArg:
 ```
-from pype import pype as p
-from pype.val import lenf
+from pype4 import pype as p
+from pype4.val import lenf
 
 def ls_times_itself(ls):
   
@@ -1230,7 +1230,7 @@ def ls_times_itself(ls):
 ```
 Pretty awesome, but be careful - it leads to a lot of bloat.  When you can, define your variables in the function body before the pype expression:
 ```
-from pype import pype as p
+from pype4 import pype as p
 
 def ls_times_itself(ls):
  
@@ -1243,7 +1243,7 @@ def ls_times_itself(ls):
 ```
 Much cleaner.  But you could also use pype variable assigns:
 ```
-from pype import pype as p
+from pype4 import pype as p
 
 def ls_times_itself(ls):
  
@@ -1284,8 +1284,8 @@ val2=some_other_pype_func(js2)
 ```
 However, pype's natural habitat is a microservice, so you're going to see/write a lot of code like this:
 ```
-from pype import pype as p
-from pype import  db # dict build
+from pype4 import pype as p
+from pype4 import  db # dict build
 from flask import request, jsonify
 
 @app.route('/add',methods=['POST'])
