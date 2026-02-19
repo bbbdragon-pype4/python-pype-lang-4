@@ -68,7 +68,7 @@ Pype is distributed under the MIT license.
 
 # Requirements
 
-Pype uses Python3.6 or above.
+Pype uses Python3.13 or above.
 
 # Installation
 
